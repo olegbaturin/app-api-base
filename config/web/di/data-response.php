@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-use App\Http\ApiResponseFormatter;
 use Yiisoft\DataResponse\DataResponseFormatterInterface;
+use Yiisoft\DataResponse\Formatter\JsonDataResponseFormatter;
 
 /* @var $params array */
 
 return [
-    DataResponseFormatterInterface::class => ApiResponseFormatter::class,
+    DataResponseFormatterInterface::class => JsonDataResponseFormatter::class,
 ];

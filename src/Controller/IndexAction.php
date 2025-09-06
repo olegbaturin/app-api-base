@@ -4,19 +4,23 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use App\ApplicationParams;
 use Psr\Http\Message\ResponseInterface;
-use Yiisoft\DataResponse\DataResponseFactoryInterface;
+
+use App\ApplicationParams;
+use App\Renderer\DataRenderer;
+use App\Resource\AboutResource;
 
 final class IndexAction
 {
     public function __invoke(
-        DataResponseFactoryInterface $responseFactory,
+        DataRenderer $dataRenderer,
         ApplicationParams $applicationParams,
     ): ResponseInterface {
-        return $responseFactory->createResponse([
-            'name' => $applicationParams->name,
-            'version' => $applicationParams->version,
-        ]);
+        $data = new AboutResource(
+            name: $applicationParams->name,
+            version: $applicationParams->version,
+        );
+
+        return $dataRenderer->render($data);
     }
 }

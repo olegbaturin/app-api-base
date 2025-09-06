@@ -2,13 +2,14 @@
 
 declare(strict_types=1);
 
-use Yiisoft\ErrorHandler\Renderer\JsonRenderer;
 use Yiisoft\ErrorHandler\ThrowableRendererInterface;
+
+use App\Renderer\Error\ErrorJsonRenderer;
 
 /**
  * @var array $params
  */
 
 return [
-    ThrowableRendererInterface::class => JsonRenderer::class,
+    ThrowableRendererInterface::class => ErrorJsonRenderer::class,
 ];
