@@ -55,6 +55,7 @@
         "yiisoft/request-provider": "^1.2",
         "yiisoft/router": "^4.0",
         "yiisoft/router-fastroute": "^4.0.1",
+        "yiisoft/strings": "^2.6",
         "yiisoft/yii-console": "^2.3",
         "yiisoft/yii-event": "^2.1",
         "yiisoft/yii-http": "^1.0.4",
